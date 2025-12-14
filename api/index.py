@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 new_uri = "None"
 
-kv = redis.from_url(os.environ.get("KV_REDIS_URL").replace("redis://", "rediss://"), decode_responses=True,ssl_cert_reqs=None)
+kv = redis.from_url(os.environ.get("KV_REDIS_URL"), decode_responses=True)
 
 
 @app.route('/post')
