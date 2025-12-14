@@ -16,7 +16,7 @@ def home():
     new_uri = args['uri']
     new_uri = b64.b64decode(new_uri).decode('utf-8')
     print(new_uri)
-    kv.set('active_url', new_url)
+    kv.set('active_url', new_uri)
     return 'OK', 200
 
 @app.route('/ping')
