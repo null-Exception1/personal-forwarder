@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request, jsonify
 import base64 as b64
 import redis
+import os
 app = Flask(__name__)
 new_uri = "None"
 
