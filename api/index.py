@@ -5,7 +5,7 @@ import redis
 app = Flask(__name__)
 new_uri = "None"
 
-kv = redis.from_url(os.environ.get("KV_URL").replace("redis://", "rediss://"), decode_responses=True)
+kv = redis.from_url(os.environ.get("KV_REDIS_URL").replace("redis://", "rediss://"), decode_responses=True)
 
 
 @app.route('/post')
@@ -23,7 +23,7 @@ def ping():
     return 'pong', 200
 @app.route('/get')
 def about():
-    
+
     return kv.get('active_url')
 
 #if __name__ == "__main__":
